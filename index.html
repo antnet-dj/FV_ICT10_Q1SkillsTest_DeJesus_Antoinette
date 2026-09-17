@@ -3,57 +3,288 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skills Test - Receipt Generator</title>
+
+    <title>Simon Says Restaurant</title>
+
     <link rel="stylesheet" href="https://pyscript.net/releases/2025.3.1/core.css" />
     <script type="module" src="https://pyscript.net/releases/2025.3.1/core.js"></script>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            font-family: Arial, sans-serif;
+            background-color: #f3eee6;
+            color: #30251f;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .header {
+            text-align: center;
+            background-color: #4a2c22;
+            color: #fff8ed;
+            padding: 35px 25px;
+            border-radius: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 38px;
+            letter-spacing: 2px;
+        }
+
+        .header h3 {
+            margin: 8px 0;
+            color: #e8c39e;
+        }
+
+        .header p {
+            margin-top: 18px;
+            font-size: 15px;
+        }
+
+        .menu {
+            background-color: #fffaf2;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .menu-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #d8c3ad;
+            padding-bottom: 10px;
+        }
+
+        .food-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin: 10px 0;
+            background-color: #f7f0e7;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: transform 0.2s ease,
+                        background-color 0.2s ease,
+                        box-shadow 0.2s ease;
+        }
+
+        .food-item:hover {
+            transform: translateX(5px);
+            background-color: #eee1d1;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        .food-item input {
+            width: 18px;
+            height: 18px;
+            accent-color: #8b4a32;
+            cursor: pointer;
+            margin-right: 12px;
+        }
+
+        .food-name {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .order-button {
+            width: 100%;
+            margin-top: 25px;
+            padding: 15px;
+            border: none;
+            border-radius: 12px;
+            background-color: #8b4a32;
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            transition: transform 0.2s ease,
+                        background-color 0.2s ease,
+                        box-shadow 0.2s ease;
+        }
+
+        .order-button:hover {
+            background-color: #6f3826;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        }
+
+        .order-button:active {
+            transform: translateY(1px);
+        }
+
+        .receipt-container {
+            margin-top: 25px;
+            background-color: #fffdf8;
+            padding: 30px;
+            border-radius: 4px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+            position: relative;
+        }
+
+        .receipt-title {
+            text-align: center;
+            font-family: monospace;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        #receipt {
+            font-family: monospace;
+            line-height: 1.8;
+            font-size: 15px;
+        }
+
+        #receipt b {
+            font-size: 18px;
+        }
+
+
+        .receipt-line {
+            border-top: 2px dashed #b8a99a;
+            margin: 15px 0;
+        }
+
+    </style>
 </head>
+
 <body>
-    <h2>SIMON SAYS RESTAURANT</h2>
-    <h4>NOVA'S NUMBER 1!</h4><br>
-    <h4>Order your food here and check out your receipt!</h4>
-    <b>Menu:</b><br>
 
-    <input type="checkbox" id="grilledcheese" value="120">
-    <label for="grilledcheese">Grilled Cheese</label><br>
+<div class="container">
 
-    <input type="checkbox" id="grilledmackerel" value="150">
-    <label for="grilledmackerel">Grilled Mackerel</label><br>
+    <div class="header">
 
-    <input type="checkbox" id="cheeseomelette" value="130">
-    <label for="cheeseomelette">Cheese Omelette</label><br>
+        <h1>SIMON SAYS</h1>
 
-    <input type="checkbox" id="veggieomelette" value="150">
-    <label for="veggieomelette">Omelette w/ Veggies</label><br>
+        <h3>RESTAURANT</h3>
 
-    <input type="checkbox" id="chickennuggets" value="130">
-    <label for="chickennuggets">Chicken Nuggets</label><br>
+        <p>
+            NOVA'S NUMBER 1!
+        </p>
 
-    <input type="checkbox" id="crispytofu" value="120">
-    <label for="crispytofu">Crispy Tofu</label><br>
+        <p>
+            Order your food here and check out your receipt!
+        </p>
 
-    <input type="checkbox" id="friedchicken" value="150">
-    <label for="friedchicken">Fried Chicken</label><br>
+    </div>
 
-    <input type="checkbox" id="seafoodboil" value="250">
-    <label for="seafoodboil">Seafood Boil</label><br>
 
-    <input type="checkbox" id="spicyramen" value="180">
-    <label for="spicyramen">Spicy Ramen</label><br>
+    <!-- MENU -->
 
-    <input type="checkbox" id="cupofrice" value="50">
-    <label for="cupofrice">Cup of Rice</label><br>
+    <div class="menu">
 
-    <input type="checkbox" id="fishandchips" value="180">
-    <label for="fishandchips">Fish and Chips</label><br>
+        <div class="menu-title">
+            🍽️ Today's Menu
+        </div>
 
-    <input type="checkbox" id="frenchfries" value="100">
-    <label for="frenchfries">French Fries</label><br><br>
 
-    <button py-click="create_order">Create Order</button><br><br>
+        <label class="food-item">
+            <input type="checkbox" id="grilledcheese" value="120">
+            <span class="food-name">🥪 Grilled Cheese</span>
+        </label>
 
-    <b>---- Receipt ----</b>
-    <p id="receipt"></p>
 
-    <script type="py" src="main.py"></script>
+        <label class="food-item">
+            <input type="checkbox" id="grilledmackerel" value="150">
+            <span class="food-name">🐟 Grilled Mackerel</span>
+        </label>
+
+
+        <label class="food-item">
+            <input type="checkbox" id="cheeseomelette" value="130">
+            <span class="food-name">🍳 Cheese Omelette</span>
+        </label>
+
+
+        <label class="food-item">
+            <input type="checkbox" id="veggieomelette" value="150">
+            <span class="food-name">🍅 Omelette w/ Veggies</span>
+        </label>
+
+
+        <label class="food-item">
+            <input type="checkbox" id="chickennuggets" value="130">
+            <span class="food-name">🐤 Chicken Nuggets</span>
+        </label>
+
+
+        <label class="food-item">
+            <input type="checkbox" id="crispytofu" value="120">
+            <span class="food-name">🍱 Crispy Tofu</span>
+        </label>
+
+
+        <label class="food-item">
+            <input type="checkbox" id="friedchicken" value="150">
+            <span class="food-name">🍗 Fried Chicken</span>
+        </label>
+
+
+        <label class="food-item">
+            <input type="checkbox" id="seafoodboil" value="250">
+            <span class="food-name">🦞 Seafood Boil</span>
+        </label>
+
+
+        <label class="food-item">
+            <input type="checkbox" id="spicyramen" value="180">
+            <span class="food-name">🍜 Spicy Ramen</span>
+        </label>
+
+
+        <label class="food-item">
+            <input type="checkbox" id="cupofrice" value="50">
+            <span class="food-name">🍚 Cup of Rice</span>
+        </label>
+
+
+        <label class="food-item">
+            <input type="checkbox" id="fishandchips" value="180">
+            <span class="food-name">🐟 Fish and Chips</span>
+        </label>
+
+
+        <label class="food-item">
+            <input type="checkbox" id="frenchfries" value="100">
+            <span class="food-name">🍟 French Fries</span>
+        </label>
+
+
+        <button class="order-button" py-click="create_order">
+            Create Order
+        </button>
+
+    </div>
+
+    <div class="receipt-container">
+
+        <div class="receipt-title">
+            ---- RECEIPT ----
+        </div>
+
+        <div class="receipt-line"></div>
+
+        <p id="receipt"></p>
+
+    </div>
+</div>
+
+
+<script type="py" src="main.py"></script>
+
 </body>
 </html>
