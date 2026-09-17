@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills Test - Receipt Generator</title>
+    <link rel="stylesheet" href="https://pyscript.net/releases/2025.3.1/core.css" />
+    <script type="module" src="https://pyscript.net/releases/2025.3.1/core.js"></script>
+</head>
+<body>
+    <h2>SIMON SAYS RESTAURANT</h2>
+    <h4>NOVA'S NUMBER 1!</h4><br>
+    <h4>Order your food here and check out your receipt!</h4>
+    <b>Menu:</b><br>
+
+    <input type="checkbox" id="grilledcheese" value="120">
+    <label for="grilledcheese">Grilled Cheese</label><br>
+
+    <input type="checkbox" id="grilledmackerel" value="150">
+    <label for="grilledmackerel">Grilled Mackerel</label><br>
+
+    <input type="checkbox" id="cheeseomelette" value="130">
+    <label for="cheeseomelette">Cheese Omelette</label><br>
+
+    <input type="checkbox" id="veggieomelette" value="150">
+    <label for="veggieomelette">Omelette w/ Veggies</label><br>
+
+    <input type="checkbox" id="chickennuggets" value="130">
+    <label for="chickennuggets">Chicken Nuggets</label><br>
+
+    <input type="checkbox" id="crispytofu" value="120">
+    <label for="crispytofu">Crispy Tofu</label><br>
+
+    <input type="checkbox" id="friedchicken" value="150">
+    <label for="friedchicken">Fried Chicken</label><br>
+
+    <input type="checkbox" id="seafoodboil" value="250">
+    <label for="seafoodboil">Seafood Boil</label><br>
+
+    <input type="checkbox" id="spicyramen" value="180">
+    <label for="spicyramen">Spicy Ramen</label><br>
+
+    <input type="checkbox" id="cupofrice" value="50">
+    <label for="cupofrice">Cup of Rice</label><br>
+
+    <input type="checkbox" id="fishandchips" value="180">
+    <label for="fishandchips">Fish and Chips</label><br>
+
+    <input type="checkbox" id="frenchfries" value="100">
+    <label for="frenchfries">French Fries</label><br><br>
+
+    <button py-click="create_order">Create Order</button><br><br>
+
+    <b>---- Receipt ----</b>
+    <p id="receipt"></p>
+
+    <script type="py" src="main.py"></script>
+</body>
+</html>
