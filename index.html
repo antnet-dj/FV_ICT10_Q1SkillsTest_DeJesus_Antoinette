@@ -70,13 +70,13 @@
         }
 
         .food-item {
-            display: flex;
-            align-items: center;
+            display: block;
             padding: 15px;
             margin: 10px 0;
             background-color: #f7f0e7;
             border-radius: 12px;
-            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
             transition: transform 0.2s ease,
                         background-color 0.2s ease,
                         box-shadow 0.2s ease;
@@ -92,13 +92,7 @@
             width: 18px;
             height: 18px;
             accent-color: #8b4a32;
-            cursor: pointer;
             margin-right: 12px;
-        }
-
-        .food-name {
-            font-size: 16px;
-            font-weight: bold;
         }
 
         .order-button {
@@ -187,78 +181,65 @@
             🍽️ Today's Menu
         </div>
 
-
         <label class="food-item">
             <input type="checkbox" id="grilledcheese" value="120">
-            <span class="food-name">🥪 Grilled Cheese</span>
+            🥪 Grilled Cheese
         </label>
-
 
         <label class="food-item">
             <input type="checkbox" id="grilledmackerel" value="150">
-            <span class="food-name">🐟 Grilled Mackerel</span>
+            🐟 Grilled Mackerel
         </label>
-
 
         <label class="food-item">
             <input type="checkbox" id="cheeseomelette" value="130">
-            <span class="food-name">🍳 Cheese Omelette</span>
+            🍳 Cheese Omelette
         </label>
-
 
         <label class="food-item">
             <input type="checkbox" id="veggieomelette" value="150">
-            <span class="food-name">🍅 Omelette w/ Veggies</span>
+            🍅 Omelette w/ Veggies
         </label>
-
 
         <label class="food-item">
             <input type="checkbox" id="chickennuggets" value="130">
-            <span class="food-name">🐤 Chicken Nuggets</span>
+            🐤 Chicken Nuggets
         </label>
-
 
         <label class="food-item">
             <input type="checkbox" id="crispytofu" value="120">
-            <span class="food-name">🍱 Crispy Tofu</span>
+            🍱 Crispy Tofu
         </label>
-
 
         <label class="food-item">
             <input type="checkbox" id="friedchicken" value="150">
-            <span class="food-name">🍗 Fried Chicken</span>
+            🍗 Fried Chicken
         </label>
-
 
         <label class="food-item">
             <input type="checkbox" id="seafoodboil" value="250">
-            <span class="food-name">🦞 Seafood Boil</span>
+            🦞 Seafood Boil
         </label>
-
 
         <label class="food-item">
             <input type="checkbox" id="spicyramen" value="180">
-            <span class="food-name">🍜 Spicy Ramen</span>
+            🍜 Spicy Ramen
         </label>
-
 
         <label class="food-item">
             <input type="checkbox" id="cupofrice" value="50">
-            <span class="food-name">🍚 Cup of Rice</span>
+            🍚 Cup of Rice
         </label>
-
 
         <label class="food-item">
             <input type="checkbox" id="fishandchips" value="180">
-            <span class="food-name">🐟 Fish and Chips</span>
+            🐟 Fish and Chips
         </label>
-
 
         <label class="food-item">
             <input type="checkbox" id="frenchfries" value="100">
-            <span class="food-name">🍟 French Fries</span>
+            🍟 French Fries
         </label>
-
 
         <button class="order-button" py-click="create_order">
             Create Order
@@ -267,15 +248,11 @@
     </div>
 
     <div class="receipt-container">
-
         <div class="receipt-title">
             ---- RECEIPT ----
         </div>
-
         <div class="receipt-line"></div>
-
         <p id="receipt"></p>
-
     </div>
 </div>
 

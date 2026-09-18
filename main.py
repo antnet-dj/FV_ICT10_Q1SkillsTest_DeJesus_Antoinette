@@ -98,3 +98,8 @@ def create_order(e):
     receipt = receipt + "<b>Total: ₱" + str(total) + "</b>"
 
     document.getElementById("receipt").innerHTML = receipt
+
+
+
+
+    # SOURCES USED: https://www.w3schools.com/python/ref_list_append.asp https://www.w3schools.com/Jsref/met_document_getelementbyid.asp https://mimo.org/glossary/python/if-statement
